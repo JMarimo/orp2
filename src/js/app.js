@@ -40,4 +40,4 @@ export default function getSpecial(obj) {
   return result;
 }
 
-getSpetial(character);
+getSpecial(character);
