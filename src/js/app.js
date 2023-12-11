@@ -20,24 +20,21 @@ const character = {
   ],
 };
 
-export default function getSpecial(obj) {
+export default function getSpecial({ special }) {
   const result = [];
-  const { special } = obj;
   if (!special) {
     return [];
   }
   for (let i = 0; i < special.length; i += 1) {
-    if (!special[i].description) {
-      special[i].description = 'Описание недоступно';
-    }
+    const { id, name, icon, description = 'Описание недоступно' } = special[i];
     result.push({
-      id: special[i].id,
-      name: special[i].name,
-      icon: special[i].icon,
-      description: special[i].description,
+      id,
+      name,
+      icon,
+      description,
     });
   }
   return result;
 }
 
-getSpecial(character);
+getSpeсial(character);
